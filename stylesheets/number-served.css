@@ -91,6 +91,11 @@ section#main #counter {
   text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
 }
 
-section#main span#counter_start {
+section#main #average_rate {
+  font-size: 0.8em;
+}
+
+
+section#main p#counter_start {
   font-size: 0.6em;
 }

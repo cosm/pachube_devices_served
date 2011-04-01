@@ -16,6 +16,8 @@ $(document).ready(function(){
   // This is my user level GET advanced api key
   var api_key = "WpU94r-Sm3SazTROYhD6-J95169ZM5-ruPyP73qUZjA";
   var counter = 0;
+  var average = 0;
+  var date = new Date;
   
   function formatTimestamp(ts) {
     return(ts.replace(/(\..{6}Z)$/, "").replace("T", " "));
@@ -46,7 +48,6 @@ $(document).ready(function(){
   }
 
   ws.onopen = function(evt) {
-    var date = new Date();
     $('#counter_start').html(date.toUTCString());
     subscribe(ws, api_key);
   }
@@ -56,12 +57,14 @@ $(document).ready(function(){
     response = JSON.parse(data);
     if (response.body) {
       counter++;
+      average = (counter / (((new Date) - date)) * 1000).toFixed(2);
       if (counter % 19 == 0) {
         if (response.body.tags != undefined) {
           updateRecentTags(response.body.tags);
         }
         $('#counter').html(counter).digits();
       }
+      $('#average').html(average).digits();
     }
   }
   
