@@ -64,6 +64,7 @@ ul#recent_tags {
     -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.6);
     background-color: #333;
     margin: 4px 0;
+    cursor: pointer;
   }
 
   ul#recent_tags li a {
@@ -90,3 +91,6 @@ section#main #counter {
   text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
 }
 
+section#main span#counter_start {
+  font-size: 0.6em;
+}

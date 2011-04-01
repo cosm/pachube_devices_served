@@ -44,6 +44,7 @@ $(document).ready(function(){
   ws.onerror = function(evt) {
     alert("Could not open WebSocket connection");
   }
+
   ws.onopen = function(evt) {
     var date = new Date();
     $('#counter_start').html(date.toUTCString());
