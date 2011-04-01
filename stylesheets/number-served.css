@@ -30,13 +30,9 @@ h1, h2, h3, h4, h5, p {
   padding: 0;
 }
 
-h3 {
-  font-size: 1.5em;
-}
-
-h3 a {
-  text-decoration: none;
-  vertical-align: bottom;
+h2 {
+  text-align: left;
+  color: #333;
 }
 
 nav#primary {
@@ -66,7 +62,7 @@ ul#recent_tags {
     -webkit-border-radius: 3px;
     -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.6);
     -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.6);
-    background-color: #F06;
+    background-color: #333;
     margin: 4px 0;
   }
 
