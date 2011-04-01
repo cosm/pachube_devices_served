@@ -1,0 +1,94 @@
+html {
+  background: white;
+  color: black;
+}
+
+body{
+  font: normal medium 'Gill Sans','Gill Sans MT','Goudy Bookletter 1911','Linux Libertine O','Liberation Serif',Candara,serif;
+  padding: 0;
+  margin: 0 auto;
+  width: 40em;
+  line-height: 1.75;
+  word-spacing: 0.1em
+  font-size: 1.1em;
+}
+
+a, a#visited {
+  color: black;
+}
+
+body header {
+  margin: 0 0 1em 0;
+  border-bottom: 1px solid #ccc;
+  padding: 0 0 1em 0;
+}
+
+section header {
+  border: none;
+}
+
+h1, h2, h3, h4, h5, p {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h3 a {
+  text-decoration: none;
+  vertical-align: bottom;
+}
+
+nav#primary {
+  position:absolute;
+  top: 0;
+  left: 0;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline;
+  padding-left: 0.5em;
+}
+
+div#major {
+  font-size: 1.2em;
+  float: left;
+  width: 60%;
+}
+
+div#minor {
+  width: 40%;
+  float: left;
+}
+
+div#minor div.datastream {
+  color: #666;
+}
+
+span.old_value {
+  color: #666;
+  font-size: 0.7em;
+}
+
+section#main div.datastream {
+  background-color: #eee;
+  padding: 10px;
+  margin: 0 0px 10px 10px;
+  width: 27%;
+  float: left;
+  border-bottom: 4px solid #666;
+}
+
+div#last_update {
+  position: absolute;
+  top: 4px;
+  right: 10px;
+  display: none;
+}
