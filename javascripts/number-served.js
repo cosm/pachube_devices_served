@@ -55,7 +55,7 @@ $(document).ready(function(){
     response = JSON.parse(data);
     if (response.body) {
       counter++;
-      if (counter % 9 == 0) {
+      if (counter % 19 == 0) {
         if (response.body.tags != undefined) {
           updateRecentTags(response.body.tags);
         }
