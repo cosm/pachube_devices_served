@@ -1,3 +1,11 @@
+(function($){ 
+  $.fn.digits = function(){ 
+    return this.each(function(){ 
+      $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") ); 
+    })
+  }
+})(jQuery);
+
 $(document).ready(function(){
 
   if(!("WebSocket" in window)) {
@@ -21,6 +29,15 @@ $(document).ready(function(){
     ws.send('{"headers":{"X-PachubeApiKey":"' + api_key + '"}, "method":"unsubscribe", "resource":"/#"}');
   }
 
+  function updateRecentTags(tags) {
+    for(i=0;i<tags.length;i++) {
+      $('<li><a href="http://www.pachube.com/tags/' + tags[i] + '">☞ ' + tags[i] + '</a></li>').prependTo('#recent_tags');
+      if ($('#recent_tags > li').size() > 20) {
+        $('#recent_tags > li').last().remove()
+      }
+    }
+  }
+
   // Use the Pachube beta websocket server
   ws = new WebSocket("ws://beta.pachube.com:8080/");
 
@@ -30,7 +47,7 @@ $(document).ready(function(){
   ws.onopen = function(evt) {
     var date = new Date();
     $('#counter_start').html(date.toUTCString());
-    // subscribe(ws, api_key);
+    subscribe(ws, api_key);
   }
 
   ws.onmessage = function(evt) {
@@ -38,7 +55,12 @@ $(document).ready(function(){
     response = JSON.parse(data);
     if (response.body) {
       counter++;
-      $('#counter').html(counter);
+      if (counter % 9 == 0) {
+        if (response.body.tags != undefined) {
+          updateRecentTags(response.body.tags);
+        }
+        $('#counter').html(counter).digits();
+      }
     }
   }
   
