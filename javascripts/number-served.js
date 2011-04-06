@@ -44,7 +44,11 @@ $(document).ready(function(){
   ws = new WebSocket("ws://beta.pachube.com:8080/");
 
   ws.onerror = function(evt) {
-    alert("Could not open WebSocket connection");
+    alert("Could not open WebSocket connection.");
+  }
+
+  ws.onclose = function(evt) {
+    alert("WebSocket connection closed. Try refreshing your browser.");
   }
 
   ws.onopen = function(evt) {
