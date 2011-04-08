@@ -14,7 +14,7 @@ $(document).ready(function(){
   }
  
   // This is my user level GET advanced api key
-  var api_key = "WpU94r-Sm3SazTROYhD6-J95169ZM5-ruPyP73qUZjA";
+  var api_key = "KTxurTMCHpqk0LwoQDK447FYtaPzo05uf9n3QTmOrctbOArUxb5ixkS2Y8gxnjKi";
   var counter = 0;
   var average = 0;
   var date = new Date;
